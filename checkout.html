@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="checkout.css">
+    <title>Checkout</title>
+</head>
+
+<style>
+body{
+    height: 100vh;
+    margin: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+}
+.container{
+    width: 300px;
+    padding: 50px;
+    border: 2px solid gray;
+    border-radius: 5px;
+}
+</style>
+
+<body>
+    <form method="get" action=".">
+    <div class="container">
+    <h1>Checkout</h1>
+        <label>Cep:
+        <input name="cep" type="text" id="cep" size="40" maxlength="9" onblur="pesquisacep(this.value);" /></label><br />
+        <label>Rua:
+        <input name="rua" type="text" id="rua" size="40" /></label><br />
+        <label>Bairro:
+        <input name="bairro" type="text" id="bairro" size="40" /></label><br />
+        <label>Cidade:
+        <input name="cidade" type="text" id="cidade" size="40" /></label><br />
+        <label>Estado:
+        <input name="uf" type="text" id="uf" size="40" /></label><br />
+        <label>IBGE:
+        <input name="ibge" type="text" id="ibge" size="40" /></label><br />
+    </div>
+    </form>
+</body>
+
+
+
+</html>
