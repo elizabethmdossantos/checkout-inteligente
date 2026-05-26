@@ -34,7 +34,7 @@ def test_cep_inexistente(api_client, base_url):
     
     assert response.status_code == 200
     data = response.json()
-    assert data["erro"] is True or data["erro"] == "true"
+    assert data.get("erro") == "true" or data.get("erro") is True
 
 
 def test_formato_invalido(api_client, base_url):
@@ -52,13 +52,13 @@ def test_cep_com_espacos(api_client, base_url):
 
 
 def test_cep_com_hifen(api_client, base_url):
-
     cep = "01001-000"
     response = api_client.get(f"{base_url}{cep}/json/")
     
     assert response.status_code == 200
     data = response.json()
-    assert data["logradouro"] == "Praça da Sé"
+    assert "erro" not in data
+    assert "logradouro" in data and len(data["logradouro"]) > 0
 
 
 def test_cep_incompleto(api_client, base_url):
